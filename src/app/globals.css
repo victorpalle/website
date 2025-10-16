@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-raleway: var(--font-raleway);
+  --font-roboto-mono: var(--font-roboto-mono)
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.underline-left-right {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.underline-left-right::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px; /* ajuster selon ton texte */
+  width: 0%;
+  height: 6px;   /* épaisseur de la ligne */
+  background-color: black; /* couleur de la ligne */
+  transition: width 0.3s ease;
+}
+
+.underline-left-right:hover::after {
+  width: 100%;
+}
+
+
+.underline-hover {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.underline-hover::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;       /* ligne juste en dessous du texte */
+  height: 2px;     /* épaisseur de la ligne */
+  width: 0%;       /* commence invisible */
+  background-color: black; /* couleur de la ligne */
+  transition: width 0.3s ease;
+}
+
+.underline-hover:hover::after {
+  width: 100%;     /* s’étend sur toute la largeur du texte */
+}
+
+
+.underline-hover-light {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.underline-hover-light::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;       /* ligne juste en dessous du texte */
+  height: 2px;     /* épaisseur de la ligne */
+  width: 0%;       /* commence invisible */
+  background-color: white; /* couleur de la ligne */
+  transition: width 0.3s ease;
+}
+
+.underline-hover-light:hover::after {
+  width: 100%;     /* s’étend sur toute la largeur du texte */
+}

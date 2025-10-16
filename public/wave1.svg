@@ -1,0 +1,15 @@
+<svg
+  viewBox="0 0 200 200"
+  className="w-40 h-40"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    fill="none"
+    stroke="#141414"
+    strokeWidth="3"
+    d="M100,10
+       C120,15 180,40 160,100
+       C140,160 60,180 40,120
+       C20,60 80,5 100,10 Z"
+  />
+</svg>
