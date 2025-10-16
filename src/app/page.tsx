@@ -20,7 +20,7 @@ export default function Home() {
             <div className="flex min-h-screen w-full px-50">
                 {/* Colonne de gauche */}
                 <div className="flex flex-col w-1/2 min-h-screen pt-70 font-raleway">
-                    <div className="text-black text-4xl">Victor Palle</div>
+                    <div className="text-black text-4xl">Viktor Palle</div>
                     <div className="flex flex-col w-full">
                         <div className="text-black text-xl">
                             Full-stack developer &#x2022; Musician

@@ -39,7 +39,7 @@ export const Page = () => {
                         transition={{ duration: 1, ease: 'easeOut' }}
                     >
                         Hi, <br />
-                        I&apos;m Victor
+                        I&apos;m Viktor
                     </motion.div>
 
                     {/* Animation du texte */}
