@@ -25,10 +25,9 @@ export const Page = () => {
       {/* --- Projects text --- */}
       <div className="flex absolute top-10 right-10 text-black text-3xl font-raleway gap-3">
         {menuItems.map((item, index) => (
-            <Link
-              key={index}
-              className="underline-hover"
-              href={item.href}>{index != 0 && <span>&#x2022;</span>} {item.label}</Link>
+          <Link key={index} className="underline-hover" href={item.href}>
+            {index != 0 && <span>&#x2022;</span>} {item.label}
+          </Link>
         ))}
       </div>
 
@@ -86,7 +85,13 @@ export const Page = () => {
           </div>
           <div className="w-1/3">
             <div className="text-3xl mb-2">Url</div>
-            <div>Soon</div>
+            <a
+              href="https://drive.google.com/file/d/13_D6UbQDQ7wdora08dNtHyPN_QN7vbiQ/view?usp=sharing"
+              target="_blank"
+              className="underline-hover-light"
+            >
+              Download the game
+            </a>
           </div>
         </div>
         <Image
