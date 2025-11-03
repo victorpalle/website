@@ -125,14 +125,13 @@ export const Page = () => {
             input from users.
           </div>
         </div>
-        {/* <Image
-          src="/sonar2.png"
-          alt="drumgan"
-          width={1600}
-          height={900}
-          priority
-          style={{ borderRadius: "20px" }}
-        /> */}
+        <video width="auto" height="auto" controls>
+          <source
+            src="https://nms7qcu6fuie2xus.public.blob.vercel-storage.com/Groovedeck-video.mov"
+            type="video/mp4"
+          />
+          Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   );
