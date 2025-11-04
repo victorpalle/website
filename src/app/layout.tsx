@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Raleway, Roboto_Mono } from "next/font/google";
 import "./globals.css";
+import { colors } from "../../lib/colors";
+import AudioPlayer from "./components/audioPlayer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +40,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${robotoMono.variable} antialiased`}
       >
         {children}
+        <AudioPlayer />
       </body>
     </html>
   );
