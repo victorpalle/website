@@ -8,6 +8,8 @@ interface InteractiveCircle3Props {
   onClick?: () => void;
   hoverEffect?: boolean;
   label?: string;
+  strokeColor?: string; 
+  labelColor?: string
 }
 
 export const InteractiveCircle3 = ({
@@ -15,6 +17,8 @@ export const InteractiveCircle3 = ({
   onClick,
   hoverEffect,
   label,
+  strokeColor,
+  labelColor,
 }: InteractiveCircle3Props) => {
   const [hovered, setHovered] = useState(false);
 
@@ -37,7 +41,7 @@ export const InteractiveCircle3 = ({
               ? colors.tertiary
               : "transparent"
         }
-        stroke="#141414"
+        stroke={strokeColor ? strokeColor : colors.secondary}
         strokeWidth="1"
         initial={{ scale: 0.5, opacity: 1 }}
         animate={{ scale: hovered || shouldBeFilled ? 1 : 0.5 }}
@@ -53,7 +57,7 @@ export const InteractiveCircle3 = ({
           y="130"
           textAnchor="middle"
           dominantBaseline="middle"
-          fill={colors.secondary}
+          fill={labelColor ? labelColor : colors.secondary}
           className="font-raleway text-[10px] z-0"
           style={{ pointerEvents: "none" }}
           initial={{ scale: 0.7 }}

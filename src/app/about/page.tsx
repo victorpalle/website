@@ -3,12 +3,29 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { colors } from "../../../lib/colors";
-import InteractiveCircle2 from "../components/interactiveCercle2";
-import InteractiveCircle1 from "../components/interactiveCercle1";
 import InteractiveCircle3 from "../components/interactiveCercle3";
+
+const downloadUrl =
+  "https://nms7qcu6fuie2xus.public.blob.vercel-storage.com/CV_VICTOR_PALLE_EN.pdf";
 
 export const Page = () => {
   const router = useRouter();
+
+  const handleClickOnDownload = async () => {
+    if (!downloadUrl) return;
+
+    const response = await fetch(downloadUrl);
+    const blob = await response.blob();
+    const blobUrl = window.URL.createObjectURL(blob);
+
+    const link = document.createElement("a");
+    link.href = blobUrl;
+    link.download = downloadUrl.split("/").pop() || "download.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(blobUrl);
+  };
 
   return (
     <div
@@ -70,18 +87,13 @@ export const Page = () => {
           height={300}
           className="rounded-xl"
         />
-
-        {/* Décor SVG */}
-        {/* <Image
-          className="absolute right-120 top-[-100px] z-index-0"
-          src="wave2.svg"
-          width={500}
-          height={500}
-          alt="wave"
-        /> */}
-        {/* <div className="absolute right-120 top-[-100px] z-10">
-          <InteractiveCircle3 label="Download my resume" hoverEffect />
-        </div> */}
+        <div className="absolute right-120 top-[-100px] z-10">
+          <InteractiveCircle3
+            label="Download my resume"
+            hoverEffect
+            onClick={handleClickOnDownload}
+          />
+        </div>
       </div>
 
       {/* --- Section 2 --- */}
@@ -119,7 +131,7 @@ export const Page = () => {
       </div>
       {/* --- Section 3 --- */}
       <div
-        className="flex font-raleway w-full min-h-screen p-30 text-black"
+        className="flex relative font-raleway w-full min-h-screen p-30 text-black"
         style={{ backgroundColor: colors.primary }}
       >
         <div className="flex flex-col w-1/2">
@@ -149,11 +161,20 @@ export const Page = () => {
             alt="wave"
             style={{ color: colors.primary }}
           />
-          {/* <Image className='absolute left-0 z-0' src="drawed_arrow.svg" width={300} height={500} alt="wave" /> */}
+          <div className="flex absolute left-20 bottom-5 z-0">
+            <Image
+              className=""
+              src="drawed_arrow.svg"
+              width={100}
+              height={100}
+              alt="wave"
+            />
+            <div className="font-raleway">That's my music playing down here</div>
+          </div>
         </div>
       </div>
       {/* --- Section 4 --- */}
-      <div className="flex font-raleway w-full min-h-screen p-30">
+      <div className="flex font-raleway relative w-full min-h-screen p-30">
         <div className="flex flex-col w-1/2">
           <div className="text-2xl font-raleway">
             Then came the lockdown, and with it, a growing frustration. I felt I
@@ -181,6 +202,9 @@ export const Page = () => {
             alt="wave"
             style={{ color: colors.primary }}
           />
+        </div>
+        <div className="absolute top-0 right-0">
+          <InteractiveCircle3 onClick={() => router.push("/")} label="Go to main menu" labelColor={colors.primary} strokeColor={colors.primary} />
         </div>
       </div>
     </div>
