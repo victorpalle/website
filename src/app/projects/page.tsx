@@ -5,6 +5,7 @@ import { colors } from "../../../lib/colors";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import menuItems from "../../../lib/projects";
+import InteractiveCircle1 from "../components/interactiveCercle1";
 
 export const Page = () => {
   const router = useRouter();
@@ -14,7 +15,7 @@ export const Page = () => {
       style={{ backgroundColor: colors.primary }}
     >
       <div
-        onClick={() => router.push("/")}
+        onClick={() => router.back()}
         className="absolute top-10 left-10 cursor-pointer"
       >
         <Image src="/arrow.svg" alt="arrow" width={50} height={50} />
@@ -22,10 +23,10 @@ export const Page = () => {
       <div className="absolute top-10 right-10 text-black text-3xl font-raleway">
         Projects
       </div>
-      <div className="flex w-full min-h-screen p-20 items-center">
+      <div className="flex w-full min-h-screen pt-20 px-20 items-center">
         <div className="w-full min-h-screen">
           <motion.div
-            className="flex flex-col min-h-screen text-9xl text-black justify-center"
+            className="flex flex-col min-h-screen text-9xl text-black pt-12"
             initial="hidden"
             animate="visible"
             variants={{
@@ -56,13 +57,9 @@ export const Page = () => {
             ))}
           </motion.div>
         </div>
-        <Image
-          className="absolute right-0"
-          src="wave2.svg"
-          width={500}
-          height={400}
-          alt="wave"
-        />
+        <div className="absolute right-0">
+          <InteractiveCircle1 />
+        </div>
       </div>
     </div>
   );

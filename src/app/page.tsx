@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { colors } from "../../lib/colors";
 import Link from "next/link";
 import Image from "next/image";
+import InteractiveCircle1 from "./components/interactiveCercle1";
 
 const menuItems = [
   { label: "Projects", href: "/projects" },
@@ -67,13 +68,16 @@ export default function Home() {
             </motion.div>
           ))}
         </motion.div>
-        <Image
+        <div className="absolute right-100 top-[-100px] z-0">
+          <InteractiveCircle1 hoverEffect={false} />
+        </div>
+        {/* <Image
           className="absolute right-0 top-[-100px] z-0"
           src="wave1.svg"
           width={500}
           height={400}
           alt="wave"
-        />
+        /> */}
       </div>
     </div>
   );

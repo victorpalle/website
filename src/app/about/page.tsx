@@ -3,6 +3,9 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { colors } from "../../../lib/colors";
+import InteractiveCircle2 from "../components/interactiveCercle2";
+import InteractiveCircle1 from "../components/interactiveCercle1";
+import InteractiveCircle3 from "../components/interactiveCercle3";
 
 export const Page = () => {
   const router = useRouter();
@@ -10,11 +13,11 @@ export const Page = () => {
   return (
     <div
       className="min-h-screen relative"
-      style={{ backgroundColor: colors.secondary }}
+      style={{ backgroundColor: colors.secondary, scrollBehavior: "smooth" }}
     >
       {/* --- Back button --- */}
       <div
-        onClick={() => router.push("/")}
+        onClick={() => router.back()}
         className="absolute top-10 left-10 cursor-pointer"
       >
         <Image src="/arrow.svg" alt="arrow" width={50} height={50} />
@@ -69,13 +72,16 @@ export const Page = () => {
         />
 
         {/* Décor SVG */}
-        <Image
+        {/* <Image
           className="absolute right-120 top-[-100px] z-index-0"
           src="wave2.svg"
           width={500}
           height={500}
           alt="wave"
-        />
+        /> */}
+        {/* <div className="absolute right-120 top-[-100px] z-10">
+          <InteractiveCircle3 label="Download my resume" hoverEffect />
+        </div> */}
       </div>
 
       {/* --- Section 2 --- */}
@@ -129,10 +135,10 @@ export const Page = () => {
 
         <div className="w-1/2 flex items-end justify-end">
           <Image
-            src="/universal.jpg"
+            src="/viktor-after-clip.jpg"
             alt="dauphine"
-            width={400}
-            height={400}
+            width={500}
+            height={500}
             className="rounded-xl mt-3 z-10"
           />
           <Image

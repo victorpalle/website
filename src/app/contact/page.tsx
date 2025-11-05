@@ -28,9 +28,10 @@ export const Page = () => {
                     </span>
                 </div>
                 <div className="text-black font-raleway w-full flex justify-center">
-                    On the internet:{' '}
+                    On the internet:
                     <a target="_blank" rel="noopener noreferrer" href='https://www.linkedin.com/in/victorpalle/' className="underline-hover ml-2">LinkdedIn</a><span className='ml-2'>&#x2022;</span>
-                    <a target="_blank" rel="noopener noreferrer" href='https://github.com/victorpalle' className="underline-hover ml-2">Github</a>
+                    <a target="_blank" rel="noopener noreferrer" href='https://github.com/victorpalle' className="underline-hover ml-2">Github</a><span className='ml-2'>&#x2022;</span>
+                    <a target="_blank" rel="noopener noreferrer" href='https://fanlink.tv/viktorpallemusic?fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGnxGKQcT9cHEWmKbk40-LaP5RdL8oz2OHcCt2AMHZvC9EokH9WvFphT3E0GnM_aem_MskauCSY9a4Jpq4r84B_SQ' className="underline-hover ml-2">Music</a>
                 </div>
             </div>
         </div>

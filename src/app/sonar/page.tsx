@@ -16,7 +16,7 @@ export const Page = () => {
     >
       {/* --- Back button --- */}
       <div
-        onClick={() => router.push("/")}
+        onClick={() => router.back()}
         className="absolute top-10 left-10 cursor-pointer"
       >
         <Image src="/arrow.svg" alt="arrow" width={50} height={50} />
@@ -80,7 +80,7 @@ export const Page = () => {
               Built the React frontend and login system with API integration
             </div>
           </div>
-          <div className="w-1/3">
+          <div className="flex flex-col items-end w-1/3">
             <div className="text-3xl mb-2">Url</div>
             <a
               href="https://www.sonar.so/"
