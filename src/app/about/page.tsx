@@ -169,7 +169,7 @@ export const Page = () => {
               height={100}
               alt="wave"
             />
-            <div className="font-raleway">That's my music playing down here</div>
+            <div className="font-raleway">That&apos;s my music playing down here</div>
           </div>
         </div>
       </div>
