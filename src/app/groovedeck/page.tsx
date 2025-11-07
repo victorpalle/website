@@ -34,7 +34,7 @@ export const Page = () => {
       {/* --- Section 1 --- */}
       <div
         style={{ backgroundColor: colors.primary }}
-        className="w-full h-[85vh] px-30 pt-30"
+        className="w-full h-[85vh] lg:px-10 xl:px-30 pt-30"
       >
         <div className="flex flex-col justify-center h-full text-black text-9xl">
           {/* Animation du titre */}
@@ -67,7 +67,7 @@ export const Page = () => {
       </div>
 
       {/* --- Section 2 --- */}
-      <div className="flex flex-col w-full p-30 min-h-screen">
+      <div className="flex flex-col w-full p-30 lg:px-10 xl:px-30 min-h-screen">
         <div
           className="flex w-full h-70 font-raleway"
           style={{ color: colors.primary }}
@@ -104,7 +104,7 @@ export const Page = () => {
         />
       </div>
       {/* --- Section 3 --- */}
-      <div className="min-h-screen flex flex-col w-full px-30 pb-30 gap-30">
+      <div className="min-h-screen flex flex-col w-full lg:px-10 xl:px-30 pb-30 gap-30">
         <div
           className="text-3xl font-raleway w-1/2"
           style={{ color: colors.primary }}

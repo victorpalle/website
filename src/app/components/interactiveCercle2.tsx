@@ -27,7 +27,7 @@ export const InteractiveCircle2 = ({
   return (
     <motion.svg
       viewBox="0 0 300 300"
-      className="w-35 h-35 relative"
+      className=" lg:w-20 xl:w-35 h-35 relative"
       animate={{
         scale: isBouncing ? 1.05 : 1, // 💥 zoom quand le son se joue
       }}

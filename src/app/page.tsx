@@ -18,7 +18,7 @@ export default function Home() {
       className="min-h-screen relative"
       style={{ backgroundColor: colors.primary }}
     >
-      <div className="flex min-h-screen w-full px-50">
+      <div className="flex min-h-screen w-full lg:px-10 xl:px-50">
         {/* Colonne de gauche */}
         <div className="flex flex-col w-1/2 min-h-screen pt-70 font-raleway">
           <div className="text-black text-4xl">Viktor Palle</div>

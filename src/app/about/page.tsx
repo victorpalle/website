@@ -48,7 +48,7 @@ export const Page = () => {
       {/* --- Section 1 --- */}
       <div
         style={{ backgroundColor: colors.primary }}
-        className="flex p-50 pb-30 h-[90vh] justify-between"
+        className="flex lg:p-10 xl:px-50 lg:pt-30 xl:pt-50 lg:pb-30 xl:pb-30 h-[90vh] justify-between"
       >
         <div className="flex flex-col z-10">
           {/* Animation du titre */}
@@ -87,7 +87,7 @@ export const Page = () => {
           height={300}
           className="rounded-xl"
         />
-        <div className="absolute right-120 top-[-100px] z-10">
+        <div className="absolute lg:right-50 xl:right-120 top-[-100px] z-10">
           <InteractiveCircle3
             label="Download my resume"
             hoverEffect
@@ -97,7 +97,7 @@ export const Page = () => {
       </div>
 
       {/* --- Section 2 --- */}
-      <div className="flex font-raleway w-full min-h-screen p-30">
+      <div className="flex font-raleway w-full min-h-screen lg:px-10 xl:px-30 p-30">
         <div className="flex flex-col w-1/2">
           <div
             className="text-2xl font-raleway"
@@ -131,7 +131,7 @@ export const Page = () => {
       </div>
       {/* --- Section 3 --- */}
       <div
-        className="flex relative font-raleway w-full min-h-screen p-30 text-black"
+        className="flex relative font-raleway w-full min-h-screen lg:px-10 xl:px-30 p-30 text-black"
         style={{ backgroundColor: colors.primary }}
       >
         <div className="flex flex-col w-1/2">
@@ -174,7 +174,7 @@ export const Page = () => {
         </div>
       </div>
       {/* --- Section 4 --- */}
-      <div className="flex font-raleway relative w-full min-h-screen p-30">
+      <div className="flex font-raleway relative w-full min-h-screen lg:px-10 xl:px-30 p-30">
         <div className="flex flex-col w-1/2">
           <div className="text-2xl font-raleway">
             Then came the lockdown, and with it, a growing frustration. I felt I

@@ -12,7 +12,7 @@ export default function ClientWrapper({
   const [mounted, setMounted] = useState(false);
 
   // Hook toujours appelé
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1023px)" });
 
   useEffect(() => {
     setMounted(true);
