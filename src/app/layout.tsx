@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Raleway, Roboto_Mono } from "next/font/google";
 import "./globals.css";
 import { colors } from "../../lib/colors";
 import AudioPlayer from "./components/audioPlayer";
+import { isMobile } from "react-device-detect";
+import ClientWrapper from "./components/wrappers/ClientWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -29,6 +31,8 @@ export const metadata: Metadata = {
   description: "Viktor Palle's personal website",
 };
 
+console.log("is mobile", isMobile);
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -39,8 +43,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${raleway.variable} ${robotoMono.variable} antialiased`}
       >
-        {children}
-        <AudioPlayer />
+        <ClientWrapper>{children}</ClientWrapper>
       </body>
     </html>
   );

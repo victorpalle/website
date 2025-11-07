@@ -2,7 +2,6 @@
 import { motion } from "framer-motion";
 import { colors } from "../../lib/colors";
 import Link from "next/link";
-import Image from "next/image";
 import InteractiveCircle1 from "./components/interactiveCercle1";
 
 const menuItems = [
