@@ -121,7 +121,7 @@ export const Page = () => {
           />
           <Image
             className="absolute right-[-10px] z-0"
-            src="wave3.svg"
+            src="/wave3.svg"
             width={500}
             height={500}
             alt="wave"
@@ -155,7 +155,7 @@ export const Page = () => {
           />
           <Image
             className="absolute right-[-100px] z-0"
-            src="wave2.svg"
+            src="/wave2.svg"
             width={500}
             height={500}
             alt="wave"
@@ -164,7 +164,7 @@ export const Page = () => {
           <div className="flex absolute left-20 bottom-5 z-0">
             <Image
               className=""
-              src="drawed_arrow.svg"
+              src="/drawed_arrow.svg"
               width={100}
               height={100}
               alt="wave"
@@ -196,7 +196,7 @@ export const Page = () => {
           />
           <Image
             className="absolute right-[300px] z-0"
-            src="wave3.svg"
+            src="/wave3.svg"
             width={500}
             height={500}
             alt="wave"

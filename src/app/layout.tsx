@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Raleway, Roboto_Mono } from "next/font/google";
 import "./globals.css";
-import { colors } from "../../lib/colors";
-import AudioPlayer from "./components/audioPlayer";
-import { isMobile } from "react-device-detect";
 import ClientWrapper from "./components/wrappers/ClientWrapper";
 
 const geistSans = Geist({
@@ -30,8 +27,6 @@ export const metadata: Metadata = {
   title: "Viktor Palle",
   description: "Viktor Palle's personal website",
 };
-
-console.log("is mobile", isMobile);
 
 export default function RootLayout({
   children,
