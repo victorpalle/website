@@ -23,7 +23,7 @@ export const Page = () => {
       <div className="absolute top-10 right-10 text-black text-3xl font-raleway">
         Projects
       </div>
-      <div className="flex w-full min-h-screen pt-20 px-20 items-center">
+      <div className="flex w-full min-h-screen pt-16 px-20 items-center">
         <div className="w-full min-h-screen">
           <motion.div
             className="flex flex-col min-h-screen text-9xl text-black pt-12"

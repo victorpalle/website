@@ -15,6 +15,8 @@ interface ProjectPageLayoutProps {
   urlLabel: string;
   screenshotSrc: string;
   screenshotAlt: string;
+  screenshotWidth?: number;
+  screenshotHeight?: number;
   children: React.ReactNode;
 }
 
@@ -27,6 +29,8 @@ export default function ProjectPageLayout({
   urlLabel,
   screenshotSrc,
   screenshotAlt,
+  screenshotWidth = 1600,
+  screenshotHeight = 900,
   children,
 }: ProjectPageLayoutProps) {
   const router = useRouter();
@@ -102,8 +106,8 @@ export default function ProjectPageLayout({
         <Image
           src={screenshotSrc}
           alt={screenshotAlt}
-          width={1600}
-          height={900}
+          width={screenshotWidth}
+          height={screenshotHeight}
           style={{ borderRadius: "20px" }}
         />
       </div>
