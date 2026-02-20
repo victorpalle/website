@@ -123,7 +123,7 @@ const DrumGrid = () => {
   ];
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-4 w-full">
       {/* Contrôles play + BPM */}
       <div
         className="flex items-center justify-center absolute bottom-0 w-full py-3 gap-6"
@@ -167,8 +167,9 @@ const DrumGrid = () => {
       </div>
 
       {/* Grille */}
+      <div className="overflow-x-auto w-full pb-2">
       {grid.map((row, rowIndex) => (
-        <div key={rowIndex} className="flex justify-center gap-2">
+        <div key={rowIndex} className="flex justify-center gap-2 min-w-max mx-auto">
           {row.map((active, colIndex) => (
             <div
               key={colIndex}
@@ -188,6 +189,7 @@ const DrumGrid = () => {
           ))}
         </div>
       ))}
+      </div>
     </div>
   );
 };

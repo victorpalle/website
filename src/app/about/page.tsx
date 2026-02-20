@@ -35,25 +35,24 @@ export const Page = () => {
       {/* --- Back button --- */}
       <div
         onClick={() => router.back()}
-        className="absolute top-10 left-10 cursor-pointer"
+        className="absolute top-10 left-4 md:left-10 cursor-pointer z-20"
       >
-        <Image src="/arrow.svg" alt="arrow" width={50} height={50} />
+        <Image src="/arrow.svg" alt="arrow" width={40} height={40} />
       </div>
 
       {/* --- Title --- */}
-      <div className="absolute top-10 right-10 text-black text-3xl font-raleway">
+      <div className="absolute top-10 right-4 md:right-10 text-black text-xl md:text-3xl font-raleway z-20">
         About
       </div>
 
-      {/* --- Section 1 --- */}
+      {/* --- Section 1 : Hero --- */}
       <div
         style={{ backgroundColor: colors.primary }}
-        className="flex lg:p-10 xl:px-50 lg:pt-30 xl:pt-50 lg:pb-30 xl:pb-30 h-[90vh] justify-between"
+        className="flex flex-col md:flex-row px-6 md:px-10 xl:px-50 pt-24 md:pt-30 xl:pt-50 pb-12 md:pb-30 xl:pb-30 min-h-screen md:h-[90vh] justify-between items-start md:items-end"
       >
         <div className="flex flex-col z-10">
-          {/* Animation du titre */}
           <motion.div
-            className="text-8xl text-black"
+            className="text-5xl md:text-6xl xl:text-8xl text-black"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
@@ -62,32 +61,36 @@ export const Page = () => {
             I&apos;m Viktor
           </motion.div>
 
-          {/* Animation du texte */}
           <motion.div
-            className="text-xl font-raleway text-black mt-10 w-96"
+            className="text-base md:text-xl font-raleway text-black mt-6 md:mt-10 max-w-sm md:w-96"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{
-              duration: 1,
-              ease: "easeOut",
-              delay: 0.4,
-            }}
+            transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           >
-            I’m a full-stack developer and a musician based in Paris (as you can
+            I'm a full-stack developer and a musician based in Paris (as you can
             see in the photo), <br /> just out of five years of intensive
             studies in software development.
           </motion.div>
+
+          {/* Download button : mobile uniquement */}
+          <button
+            onClick={handleClickOnDownload}
+            className="md:hidden mt-6 text-black font-raleway text-base underline-hover self-start"
+          >
+            Download my resume
+          </button>
         </div>
 
-        {/* Image principale */}
         <Image
           src="/selfie.png"
           alt="selfie"
-          width={300}
-          height={300}
-          className="rounded-xl"
+          width={250}
+          height={250}
+          className="rounded-xl mt-8 md:mt-0 self-center md:self-auto"
         />
-        <div className="absolute lg:right-50 xl:right-120 top-[-100px] z-10">
+
+        {/* Download circle : desktop uniquement */}
+        <div className="hidden md:block absolute lg:right-50 xl:right-120 top-[-100px] z-10">
           <InteractiveCircle3
             label="Download my resume"
             hoverEffect
@@ -96,22 +99,22 @@ export const Page = () => {
         </div>
       </div>
 
-      {/* --- Section 2 --- */}
-      <div className="flex font-raleway w-full min-h-screen lg:px-10 xl:px-30 p-30">
-        <div className="flex flex-col w-1/2">
+      {/* --- Section 2 : Dauphine --- */}
+      <div className="flex flex-col md:flex-row font-raleway w-full min-h-screen px-6 md:px-10 xl:px-30 py-16 md:py-20 xl:py-30">
+        <div className="flex flex-col w-full md:w-1/2">
           <div
-            className="text-2xl font-raleway"
+            className="text-lg md:text-2xl font-raleway"
             style={{ color: colors.primary }}
           >
             Right after high school, I was deeply into math and algorithms, so I
             joined a Mathematics and Computer Science program at Paris-Dauphine
             University.
           </div>
-          <div className="text-6xl mt-20">Université Paris Dauphine</div>
-          <div className="text-xl">September 2015 - June 2017</div>
+          <div className="text-4xl md:text-5xl lg:text-6xl mt-10 md:mt-20">Université Paris Dauphine</div>
+          <div className="text-base md:text-xl">September 2015 - June 2017</div>
         </div>
 
-        <div className="w-1/2 flex items-end justify-end">
+        <div className="w-full md:w-1/2 flex items-end justify-end mt-10 md:mt-0 relative">
           <Image
             src="/dauphine.jpg"
             alt="dauphine"
@@ -120,7 +123,7 @@ export const Page = () => {
             className="rounded-xl mt-3 z-10"
           />
           <Image
-            className="absolute right-[-10px] z-0"
+            className="hidden md:block absolute right-[-10px] z-0"
             src="/wave3.svg"
             width={500}
             height={500}
@@ -129,73 +132,74 @@ export const Page = () => {
           />
         </div>
       </div>
-      {/* --- Section 3 --- */}
+
+      {/* --- Section 3 : Universal --- */}
       <div
-        className="flex relative font-raleway w-full min-h-screen lg:px-10 xl:px-30 p-30 text-black"
+        className="flex flex-col md:flex-row relative font-raleway w-full min-h-screen px-6 md:px-10 xl:px-30 py-16 md:py-20 xl:py-30 text-black"
         style={{ backgroundColor: colors.primary }}
       >
-        <div className="flex flex-col w-1/2">
-          <div className="text-2xl font-raleway">
-            Since I was a kid, I’d had a musical project that eventually took
+        <div className="flex flex-col w-full md:w-1/2">
+          <div className="text-lg md:text-2xl font-raleway">
+            Since I was a kid, I&apos;d had a musical project that eventually took
             most of my time. I signed with Universal and spent three years
             making music professionally, discovering so much about the creative
             world along the way.
           </div>
-          <div className="text-6xl mt-20">Universal Music</div>
-          <div className="text-xl">August 2017 - June 2020</div>
+          <div className="text-4xl md:text-5xl lg:text-6xl mt-10 md:mt-20">Universal Music</div>
+          <div className="text-base md:text-xl">August 2017 - June 2020</div>
         </div>
 
-        <div className="w-1/2 flex items-end justify-end">
+        <div className="w-full md:w-1/2 flex items-end justify-end mt-10 md:mt-0 relative">
           <Image
             src="/viktor-after-clip.jpg"
-            alt="dauphine"
+            alt="viktor after clip"
             width={500}
             height={500}
             className="rounded-xl mt-3 z-10"
           />
           <Image
-            className="absolute right-[-100px] z-0"
+            className="hidden md:block absolute right-[-100px] z-0"
             src="/wave2.svg"
             width={500}
             height={500}
             alt="wave"
             style={{ color: colors.primary }}
           />
-          <div className="flex absolute left-20 bottom-5 z-0">
+          <div className="hidden md:flex absolute left-20 bottom-5 z-0">
             <Image
-              className=""
               src="/drawed_arrow.svg"
               width={100}
               height={100}
-              alt="wave"
+              alt="arrow"
             />
             <div className="font-raleway">That&apos;s my music playing down here</div>
           </div>
         </div>
       </div>
-      {/* --- Section 4 --- */}
-      <div className="flex font-raleway relative w-full min-h-screen lg:px-10 xl:px-30 p-30">
-        <div className="flex flex-col w-1/2">
-          <div className="text-2xl font-raleway">
+
+      {/* --- Section 4 : Epitech --- */}
+      <div className="flex flex-col md:flex-row font-raleway relative w-full min-h-screen px-6 md:px-10 xl:px-30 py-16 md:py-20 xl:py-30">
+        <div className="flex flex-col w-full md:w-1/2">
+          <div className="text-lg md:text-2xl font-raleway">
             Then came the lockdown, and with it, a growing frustration. I felt I
-            hadn’t fully explored what technology could offer, both for music
-            and beyond. That’s when I truly discovered the world of web and
+            hadn&apos;t fully explored what technology could offer, both for music
+            and beyond. That&apos;s when I truly discovered the world of web and
             software development, which has since become a real passion of mine.
           </div>
-          <div className="text-6xl mt-20">Epitech Paris</div>
-          <div className="text-xl">Septembre 2020 - June 2025</div>
+          <div className="text-4xl md:text-5xl lg:text-6xl mt-10 md:mt-20">Epitech Paris</div>
+          <div className="text-base md:text-xl">Septembre 2020 - June 2025</div>
         </div>
 
-        <div className="w-1/2 flex items-end justify-end">
+        <div className="w-full md:w-1/2 flex items-end justify-end mt-10 md:mt-0 relative">
           <Image
             src="/epitech.jpg"
-            alt="dauphine"
+            alt="epitech"
             width={400}
             height={400}
             className="rounded-xl mt-3 z-10"
           />
           <Image
-            className="absolute right-[300px] z-0"
+            className="hidden md:block absolute right-[300px] z-0"
             src="/wave3.svg"
             width={500}
             height={500}
@@ -203,8 +207,15 @@ export const Page = () => {
             style={{ color: colors.primary }}
           />
         </div>
-        <div className="absolute top-0 right-0">
-          <InteractiveCircle3 onClick={() => router.push("/")} label="Go to main menu" labelColor={colors.primary} strokeColor={colors.primary} />
+
+        {/* Go to main menu circle : desktop uniquement */}
+        <div className="hidden md:block absolute top-0 right-0">
+          <InteractiveCircle3
+            onClick={() => router.push("/")}
+            label="Go to main menu"
+            labelColor={colors.primary}
+            strokeColor={colors.primary}
+          />
         </div>
       </div>
     </div>

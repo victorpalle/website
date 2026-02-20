@@ -20,13 +20,13 @@ export const Page = () => {
       >
         <Image src="/arrow.svg" alt="arrow" width={50} height={50} />
       </div>
-      <div className="absolute top-10 right-10 text-black text-3xl font-raleway">
+      <div className="absolute top-10 right-10 text-black text-xl md:text-3xl font-raleway">
         Projects
       </div>
-      <div className="flex w-full min-h-screen pt-16 px-20 items-center">
+      <div className="flex w-full min-h-screen pt-20 px-6 md:px-20 items-center">
         <div className="w-full min-h-screen">
           <motion.div
-            className="flex flex-col min-h-screen text-9xl text-black pt-12"
+            className="flex flex-col min-h-screen text-4xl md:text-6xl lg:text-9xl text-black pt-12"
             initial="hidden"
             animate="visible"
             variants={{
@@ -57,7 +57,7 @@ export const Page = () => {
             ))}
           </motion.div>
         </div>
-        <div className="absolute right-0">
+        <div className="hidden lg:block absolute right-0">
           <InteractiveCircle1 />
         </div>
       </div>

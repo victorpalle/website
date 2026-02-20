@@ -43,13 +43,13 @@ export default function ProjectPageLayout({
       {/* --- Back button --- */}
       <div
         onClick={() => router.back()}
-        className="absolute top-10 left-10 cursor-pointer"
+        className="absolute top-10 left-4 md:left-10 cursor-pointer z-20"
       >
-        <Image src="/arrow.svg" alt="arrow" width={50} height={50} />
+        <Image src="/arrow.svg" alt="arrow" width={40} height={40} />
       </div>
 
-      {/* --- Projects nav --- */}
-      <div className="flex absolute top-10 right-10 text-black text-3xl font-raleway gap-3">
+      {/* --- Projects nav : masquée sur mobile --- */}
+      <div className="hidden md:flex absolute top-10 right-4 md:right-10 text-black text-xl md:text-2xl lg:text-3xl font-raleway gap-2 md:gap-3 z-20">
         {menuItems.map((item, index) => (
           <Link key={item.href} className="underline-hover" href={item.href}>
             {index !== 0 && <span>&#x2022;</span>} {item.label}
@@ -60,14 +60,14 @@ export default function ProjectPageLayout({
       {/* --- Section 1 : Hero --- */}
       <div
         style={{ backgroundColor: colors.primary }}
-        className="w-full h-[85vh] lg:px-10 xl:px-30 pt-30"
+        className="w-full min-h-[85vh] px-6 md:px-10 xl:px-30 pt-24 md:pt-30"
       >
-        <div className="flex flex-col justify-center h-full text-black text-9xl">
+        <div className="flex flex-col justify-center h-full text-black">
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="w-full tracking-tight"
+            className="w-full tracking-tight text-5xl md:text-7xl xl:text-9xl"
           >
             {title}
           </motion.div>
@@ -75,7 +75,7 @@ export default function ProjectPageLayout({
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-            className="text-lg w-140 pt-10 font-raleway ml-2"
+            className="text-base md:text-lg w-full md:w-140 pt-6 md:pt-10 font-raleway ml-0 md:ml-2"
           >
             {subtitle}
           </motion.div>
@@ -83,22 +83,22 @@ export default function ProjectPageLayout({
       </div>
 
       {/* --- Section 2 : Role / Responsibilities / URL + screenshot --- */}
-      <div className="flex flex-col w-full p-30 lg:px-10 xl:px-30 min-h-screen">
+      <div className="flex flex-col w-full px-6 md:px-10 xl:px-30 py-12 md:py-20">
         <div
-          className="flex w-full h-70 font-raleway"
+          className="flex flex-col md:flex-row w-full md:h-70 font-raleway gap-8 md:gap-0 mb-10 md:mb-0"
           style={{ color: colors.primary }}
         >
-          <div className="w-1/3">
-            <div className="text-3xl mb-2">Role</div>
+          <div className="w-full md:w-1/3">
+            <div className="text-2xl md:text-3xl mb-2">Role</div>
             <div>{role}</div>
           </div>
-          <div className="w-1/3 pr-10">
-            <div className="text-3xl mb-2">Responsibilities</div>
+          <div className="w-full md:w-1/3 md:pr-10">
+            <div className="text-2xl md:text-3xl mb-2">Responsibilities</div>
             <div>{responsibilities}</div>
           </div>
-          <div className="flex flex-col items-end w-1/3">
-            <div className="text-3xl mb-2">Url</div>
-            <a href={urlHref} target="_blank" className="underline-hover-light">
+          <div className="flex flex-col md:items-end w-full md:w-1/3">
+            <div className="text-2xl md:text-3xl mb-2">Url</div>
+            <a href={urlHref} target="_blank" className="underline-hover-light break-all">
               {urlLabel}
             </a>
           </div>
@@ -109,11 +109,12 @@ export default function ProjectPageLayout({
           width={screenshotWidth}
           height={screenshotHeight}
           style={{ borderRadius: "20px" }}
+          className="w-full md:w-auto"
         />
       </div>
 
       {/* --- Section 3 : contenu spécifique à chaque projet --- */}
-      <div className="min-h-screen flex flex-col w-full lg:px-10 xl:px-30 pb-30 gap-30">
+      <div className="min-h-screen flex flex-col w-full px-6 md:px-10 xl:px-30 pb-12 md:pb-20 xl:pb-30 gap-10 md:gap-16 xl:gap-30">
         {children}
       </div>
     </div>
