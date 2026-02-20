@@ -67,7 +67,7 @@ export const Page = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           >
-            I'm a full-stack developer and a musician based in Paris (as you can
+            I&apos;m a full-stack developer and a musician based in Paris (as you can
             see in the photo), <br /> just out of five years of intensive
             studies in software development.
           </motion.div>
